@@ -9,7 +9,7 @@ class Game extends Component {
     squares: Array(400).fill(null),
     blackIsNext: true,
     lastMove: -1,
-    info: "",
+    info: "Next Player is: Black",
     finished: false
   }
   handleClick(i) {
@@ -38,7 +38,7 @@ class Game extends Component {
       else
         next = "Black";
       this.setState({
-        info: "Next Player is: " + next,
+        info: "Next Player is: Black",
         blackIsNext: !this.state.blackIsNext
       })
     }   
