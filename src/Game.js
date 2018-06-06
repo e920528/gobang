@@ -144,6 +144,15 @@ class Game extends Component {
     }
     return false;
   }
+  restart() {
+    this.setState({
+      squares: Array(400).fill(null),
+      blackIsNext: true,
+      lastMove: -1,
+      info: "",
+      finished: false
+    })
+  }
   render() {
     return (
       <div className="game" id="container">
@@ -152,6 +161,9 @@ class Game extends Component {
         </div>
         <div className="game-info">
           <div>
+            <button className="btn btn-primary btn-sm" onClick = {() => this.restart()}>重新開始</button>
+          </div>
+          <div id="info">
             {this.state.info}
           </div>
         </div>
